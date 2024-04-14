@@ -170,10 +170,11 @@ if [ ! -f "$LOGREPORTER_LOCK_FILE" ]; then
 	REP_CODE=$(mktemp)
 	REP_CODE_ERRORS=$(mktemp)
 
-    # Получаем IP с наибольшим количеством запросов и пишем их во временный файл
-	select_part_of_log
-	create_ip_report
-	create_url_report
+    # Вызываем функции 
+	select_part_of_log    # Выборка из лога за нужное время
+	create_ip_report      # Выбор IP
+	create_url_report     # Выбор URL
+	create_errors_report  # Выбор ошибок и кодов возврата
 	create_errors_report
 
     # Ожидаем завершения процессов, которые запускаются в функциях-анализаторах логов
