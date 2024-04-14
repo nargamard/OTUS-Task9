@@ -175,7 +175,6 @@ if [ ! -f "$LOGREPORTER_LOCK_FILE" ]; then
 	create_ip_report      # Выбор IP
 	create_url_report     # Выбор URL
 	create_errors_report  # Выбор ошибок и кодов возврата
-	create_errors_report
 
     # Ожидаем завершения процессов, которые запускаются в функциях-анализаторах логов
 	wait $PID_IP $PID_URL $PID_CODE
